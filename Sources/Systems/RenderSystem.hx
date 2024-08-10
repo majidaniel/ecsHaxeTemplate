@@ -10,18 +10,14 @@ import components.Position;
 import components.Sprite;
 import singletonComponents.SingletonComponentsManager;
 import singletonComponents.Camera;
-import haxe.ui.core.Screen;
 
 class RenderSystem extends echoes.System {
 	// Create views based on Components
 	// TODO: try getView, may not need to activate echoes?
 	private var spriteView:View<Position, Sprite> = getLinkedView(Position, Sprite);
-	private var screen:Screen;
 	private var camera:Camera;
 
 	public function new() {
-		// Iniitialize haxe ui screen
-		screen = Screen.instance;
 		this.camera = SingletonComponentsManager.instance.get(SingleComponentType.Camera);
 	}
 
@@ -55,9 +51,6 @@ class RenderSystem extends echoes.System {
 		// Pop camera translation
 		g2.popTransformation();
 
-		// Handle UI
-		screen.renderTo(g2);
-
 		// Finish the drawing operations
 		g2.end();
 	}
@@ -74,10 +67,4 @@ class RenderSystem extends echoes.System {
 
 		return entArr;
 	}
-
-	// When UI entity is generated, add to Haxe UI
-	/*@:add private function onUiComponentAdded(uiComponent:UiComponent):Void {
-		this.uiList.add(uiComponent);
-		this.screen.addComponent(uiComponent.component);
-	}*/
 }

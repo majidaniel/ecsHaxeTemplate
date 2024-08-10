@@ -19,7 +19,6 @@ class Main {
 			// Init our singleton components
 
 			Assets.loadEverything(function() {
-				haxe.ui.Toolkit.init();
 				var renderSystem = new RenderSystem();
 				renderSystem.activate();
 				System.notifyOnFrames(function(fbs:Array<Framebuffer>) {
