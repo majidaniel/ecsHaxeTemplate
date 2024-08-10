@@ -1,3 +1,9 @@
 [submodule "Libraries/echoes"]
 	path = Libraries/echoes
 	url = https://github.com/player-03/echoes.git
+[submodule "Libraries/haxeui-kha"]
+	path = Libraries/haxeui-kha
+	url = https://github.com/haxeui/haxeui-kha.git
+[submodule "Libraries/haxeui-core"]
+	path = Libraries/haxeui-core
+	url = https://github.com/haxeui/haxeui-core.git
