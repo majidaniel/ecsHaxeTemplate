@@ -1,0 +1,3 @@
+[submodule "Libraries/echoes"]
+	path = Libraries/echoes
+	url = https://github.com/player-03/echoes.git
